@@ -56,6 +56,7 @@ module.exports = function (grunt) {
     'concat',
     'ngAnnotate',
     'copy:dist',
+    'replace:base_path',
     'cssmin',
     'uglify',
     'rev',
