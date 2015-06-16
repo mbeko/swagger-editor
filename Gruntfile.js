@@ -5,6 +5,8 @@ module.exports = function (grunt) {
   require('load-grunt-config')(grunt);
   require('time-grunt')(grunt);
 
+  grunt.config.set('web_context', '');
+
   grunt.registerTask('serve', function (target) {
     if (target === 'dist') {
       return grunt.task.run(['build', 'connect:dist:keepalive']);
@@ -56,12 +58,12 @@ module.exports = function (grunt) {
     'concat',
     'ngAnnotate',
     'copy:dist',
-    'replace:base_path',
     'cssmin',
     'uglify',
     'rev',
     'usemin',
-    'htmlmin'
+    'htmlmin',
+    'replace:base_path',
   ]);
 
   grunt.registerTask('default', [
